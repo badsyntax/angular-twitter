@@ -49,11 +49,13 @@ angular.module('app.controllers', [])
         }
       }, function error(error) {
         $scope.error = true;
+        $scope.loaded = true;
+        $scope.loading = false;
       });
     };
 
     $scope.viewTweet = function(id) {
-      window.location = 'https://twitter.com/' + $scope.username + '/status/' + id;
+      window.location = 'https://twitter.com/' + $routeParams.username + '/status/' + id;
     };
 
     $scope.load();

@@ -1,7 +1,7 @@
 <div class="stream">
   <div ng-if="loaded && tweets.length">
     <ul class="list-group">
-      <li class="list-group-item tweet" ng-repeat="tweet in tweets" ng-click="viewTweet(tweet.id)">
+      <li class="list-group-item tweet" ng-repeat="tweet in tweets" ng-click="viewTweet(tweet.id_str)">
         {{tweet.text}}
       </li>
     </ul>
@@ -13,7 +13,7 @@
     <div class="double-bounce1"></div>
     <div class="double-bounce2"></div>
   </div>
-  <div ng-if="loaded && !tweets.length">
+  <div ng-if="loaded && !error && !tweets.length">
     <p>No tweets!</p>
     <ul>
       <li><a href="/#/sign-in">Sign in again?</a></li>
