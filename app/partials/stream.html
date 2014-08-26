@@ -13,6 +13,12 @@
     <div class="double-bounce1"></div>
     <div class="double-bounce2"></div>
   </div>
+  <div ng-if="loaded && !tweets.length">
+    <p>No tweets!</p>
+    <ul>
+      <li><a href="/#/sign-in">Sign in again?</a></li>
+    </ul>
+  </div>
   <div ng-if="error">
     <p>There was an error loading the twitter stream for this user.</p>
     <ul>

@@ -32,7 +32,7 @@ angular.module('app.controllers', [])
         username: $routeParams.username,
         count: count,
         maxId: maxId
-      }, function(response) {
+      }, function success(response) {
 
         $scope.loaded = true;
         $scope.loading = false;
@@ -47,6 +47,8 @@ angular.module('app.controllers', [])
             $scope.finished = true;
           }
         }
+      }, function error(error) {
+        $scope.error = true;
       });
     };
 
