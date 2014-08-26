@@ -2,8 +2,17 @@
 
 /* Services */
 
-
-// Demonstrate how to register services
-// In this case it is a simple value service.
-angular.module('app.services', []).
+var appServices = angular.module('app.services', ['ngResource']).
   value('version', '0.1');
+
+appServices.factory('TwitterApi', ['$resource', '$location', function($resource, $location) {
+  return $resource('/timeline/:username/:count/:maxId', {
+    username: '@username',
+    count: '@count',
+    maxId: '@maxId'
+  }, {
+    get: {
+      method: 'GET'
+    }
+  });
+}]);

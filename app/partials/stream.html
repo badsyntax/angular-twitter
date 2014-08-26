@@ -1,6 +1,22 @@
 <div class="stream">
-  <div class="spinner">
+  <div ng-if="loaded && tweets.length">
+    <ul class="list-group">
+      <li class="list-group-item tweet" ng-repeat="tweet in tweets" ng-click="viewTweet(tweet.id)">
+        {{tweet.text}}
+      </li>
+    </ul>
+    <button ng-click="load()" ng-if="!loading && !finished" class="btn btn-primary load-more">
+      Load More Tweets
+    </button>
+  </div>
+  <div class="spinner" ng-if="loading">
     <div class="double-bounce1"></div>
     <div class="double-bounce2"></div>
+  </div>
+  <div ng-if="error">
+    <p>There was an error loading the twitter stream for this user.</p>
+    <ul>
+      <li><a href="/#/sign-in">Sign in again?</a></li>
+    </ul>
   </div>
 </div>

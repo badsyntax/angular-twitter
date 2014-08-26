@@ -2,7 +2,7 @@
 
 .stream {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
 }
 
 .form-signin {
@@ -10,12 +10,24 @@
   max-width: 320px;
 }
 
+.btn.load-more {
+  margin: 0 auto;
+  display: block;
+}
+
+.tweet {
+  cursor: pointer;
+}
+.tweet:hover {
+  background: #eee;
+}
+
 .spinner {
   width: 40px;
   height: 40px;
 
   position: relative;
-  margin: 100px auto;
+  margin: 20px auto;
 }
 
 .double-bounce1, .double-bounce2 {
@@ -51,3 +63,4 @@
     -webkit-transform: scale(1.0);
   }
 }
+
