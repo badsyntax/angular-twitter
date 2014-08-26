@@ -2,10 +2,14 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
-
+angular.module('app.controllers', [])
+  .controller('SignIn', ['$location', '$scope', function($location, $scope) {
+    $scope.username = '';
+    $scope.title = 'Sign In';
+    $scope.signIn = function() {
+      $location.path('/stream/' + $scope.username);
+    };
   }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
-
+  .controller('Stream', ['$scope', function($scope) {
+    $scope.title = 'Steam';
   }]);

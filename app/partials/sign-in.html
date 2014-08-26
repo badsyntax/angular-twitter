@@ -1,0 +1,19 @@
+<form class="form-signin" role="form" ng-submit="signIn()">
+  <h2 class="form-signin-heading">{{title}}</h2>
+  <p>
+    <label for="username">Please enter your twitter username:</label>
+  </p>
+  <input
+    type="username"
+    ng-model="username"
+    id="username"
+    class="form-control"
+    placeholder="username"
+    required autofocus>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
